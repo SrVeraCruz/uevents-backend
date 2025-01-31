@@ -27,4 +27,11 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "event_id")
     private Event event;
+
+    public Address(String country, String city, String state, Event event) {
+        this.country = country;
+        this.city = city;
+        this.state = state;
+        this.event = event;
+    }
 }

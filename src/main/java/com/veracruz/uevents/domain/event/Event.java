@@ -1,9 +1,7 @@
 package com.veracruz.uevents.domain.event;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.veracruz.uevents.domain.address.Address;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,8 +23,21 @@ public class Event {
 
     private String title;
     private String description;
-    private String image;
+    private String imageUrl;
+    private String eventUrl;
     private Boolean remote;
     private Date date;
+
+    @OneToOne(mappedBy = "event", cascade = CascadeType.ALL)
+    private Address address;
+
+    public Event(String title, String description, String imageUrl, String eventUrl, Boolean remote, Date date) {
+        this.title = title;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.eventUrl = eventUrl;
+        this.remote = remote;
+        this.date = date;
+    }
 
 }
