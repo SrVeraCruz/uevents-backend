@@ -1,6 +1,5 @@
 package com.veracruz.uevents.controller;
 
-import com.veracruz.uevents.domain.coupon.Coupon;
 import com.veracruz.uevents.domain.coupon.CouponRequestDTO;
 import com.veracruz.uevents.domain.coupon.CouponResponseDTO;
 import com.veracruz.uevents.service.CouponEventService;
